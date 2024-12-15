@@ -1,0 +1,56 @@
+﻿<Window x:Class="PrivazkaIkomandyINotifyKomand.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrivazkaIkomandyINotifyKomand"
+        mc:Ignorable="d"
+         Title="Записная книжка (INPC + Команды)" Height="400" Width="900" MinHeight="300" MinWidth="800">
+    <Window.DataContext>
+        <local:NotebookVM/>
+    </Window.DataContext>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="local:AppCommands.AddItem" Executed="AddItem_Executed" CanExecute="AddItem_CanExecute"/>
+        <CommandBinding Command="local:AppCommands.RemoveItem" Executed="RemoveItem_Executed" CanExecute="RemoveItem_CanExecute"/>
+        <CommandBinding Command="local:AppCommands.UpdateItem" Executed="UpdateItem_Executed" CanExecute="UpdateItem_CanExecute"/>
+        <CommandBinding Command="local:AppCommands.SaveAll" Executed="SaveAll_Executed" CanExecute="SaveAll_CanExecute"/>
+        <CommandBinding Command="local:AppCommands.LoadAll" Executed="LoadAll_Executed" CanExecute="LoadAll_CanExecute"/>
+    </Window.CommandBindings>
+
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Row="0" Grid.Column="0" Margin="0,0,8,0"
+                 ItemsSource="{Binding Entries}" SelectedItem="{Binding SelectedPerson}" DisplayMemberPath="FIO" />
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Top">
+            <Button Command="local:AppCommands.SaveAll" Content="Сохранить (Ctrl+S)" Margin="0,0,0,8"/>
+            <Button Command="local:AppCommands.LoadAll" Content="Загрузить (Ctrl+O)" Margin="0,0,0,8"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="0,8,8,0">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <TextBlock Text="ФИО:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <TextBox Width="150" Text="{Binding NewFIO, UpdateSourceTrigger=PropertyChanged}" GotFocus="Field_GotFocus"/>
+                <TextBlock Text="Адрес:" VerticalAlignment="Center" Margin="15,0,5,0"/>
+                <TextBox Width="150" Text="{Binding NewAddress, UpdateSourceTrigger=PropertyChanged}" GotFocus="Field_GotFocus"/>
+                <TextBlock Text="Телефон:" VerticalAlignment="Center" Margin="15,0,5,0"/>
+                <TextBox Width="100" Text="{Binding NewPhone, UpdateSourceTrigger=PropertyChanged}" GotFocus="Field_GotFocus"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Command="local:AppCommands.AddItem" Content="Добавить (Ctrl+N)" Margin="0,0,8,0"/>
+                <Button Command="local:AppCommands.RemoveItem" Content="Удалить (Del)" Margin="0,0,8,0"/>
+                <Button Command="local:AppCommands.UpdateItem" Content="Изменить (Ctrl+E)"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

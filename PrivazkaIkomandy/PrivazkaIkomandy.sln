@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrivazkaIkomandy", "PrivazkaIkomandy\PrivazkaIkomandy.csproj", "{671629C7-9070-4680-8C21-5588F03434C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrivazkaIkomandyINotifyKomand", "PrivazkaIkomandyINotifyKomand\PrivazkaIkomandyINotifyKomand.csproj", "{6C11C248-CCC3-4DA6-8702-7AFA217E9C50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{671629C7-9070-4680-8C21-5588F03434C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671629C7-9070-4680-8C21-5588F03434C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671629C7-9070-4680-8C21-5588F03434C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671629C7-9070-4680-8C21-5588F03434C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C11C248-CCC3-4DA6-8702-7AFA217E9C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C11C248-CCC3-4DA6-8702-7AFA217E9C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C11C248-CCC3-4DA6-8702-7AFA217E9C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C11C248-CCC3-4DA6-8702-7AFA217E9C50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
